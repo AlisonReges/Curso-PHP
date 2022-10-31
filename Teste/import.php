@@ -14,7 +14,7 @@
 
             $sql_code = "
             LOAD DATA INFILE 'uploads/cadastro.csv'
-            INTO TABLE usuario
+            INTO TABLE cadastros
             FIELDS TERMINATED BY ','
             ENCLOSED BY '\"'
             LINES TERMINATED BY '\\n'
