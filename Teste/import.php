@@ -10,18 +10,19 @@
         }else{
             
             move_uploaded_file($arquivo['tmp_name'],'uploads/'.$arquivo['name']);
+            
 
             $sql_code = "
-            LOAD DATA INFILE 'C:\\wamp64\\www\\Curso-PHP\\Curso-PHP\\Teste\\uploads\\cadastro.csv'
+            LOAD DATA INFILE 'uploads/cadastro.csv'
             INTO TABLE usuario
             FIELDS TERMINATED BY ','
             ENCLOSED BY '\"'
             LINES TERMINATED BY '\\n'
             (nome,niveldeacesso,senha,genero,datadecadastro,cpf);";
             $query = mysqli_query($link,$sql_code);
-            if(isset($query)){
-                var_dump($sql_code);
-                echo "Sucesso ao importar";
+            
+            if (!$query) {
+                die('Invalid query: '.mysqli_error($link));
             }
         }
 
