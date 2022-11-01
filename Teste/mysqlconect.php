@@ -9,8 +9,6 @@
 
     if(!isset($link)){
         echo "Falha ao conectar com o servidor";
-    }else{
-        echo "Sucesso ao conectar com o servidor!";
     }
     
 
