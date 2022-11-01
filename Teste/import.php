@@ -3,18 +3,20 @@
     include("mysqlconect.php");
     if(isset($_POST['enviar'])){
         $arquivo = $_FILES['file'];
+        var_dump($arquivo['tmp_name']);
                 
         $arquivoNew = explode('.',$arquivo['name']);
+        var_dump($arquivoNew);
 
         if($arquivoNew[sizeof($arquivoNew)-1]!='csv'){
             die('Você não pode fazer upload deste tipo de arquivo.');
         }else{
             
             move_uploaded_file($arquivo['tmp_name'],'uploads/'.$arquivo['name']);
-            var_dump($arquivo);
+            
             echo "sucesso";
                         
-            /*$sql_code =
+            $sql_code =
             "LOAD DATA INFILE "."'C:\\\\wamp64\\\\www\\\\Curso-PHP\\\\Curso-PHP\\\\Teste\\\\uploads\\\\".$arquivo['name']."'".
             "INTO TABLE cadastros
             FIELDS TERMINATED BY ','
@@ -30,7 +32,7 @@
             }
             else{
                 echo "Sucesso ao importar arquivo!";
-            }*/
+            }
         }
 
     }
