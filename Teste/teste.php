@@ -6,4 +6,5 @@ echo "'teste'";
 echo "<br/>";
 echo "\"\"";
 echo "\\n";
+echo "\"";
 ?>
