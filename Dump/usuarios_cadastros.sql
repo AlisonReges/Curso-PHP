@@ -27,13 +27,11 @@ DROP TABLE IF EXISTS `cadastros`;
 CREATE TABLE `cadastros` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(60) NOT NULL,
-  `niveldeacesso` tinyint(4) DEFAULT NULL,
-  `senha` varchar(60) NOT NULL,
-  `genero` tinyint(4) DEFAULT NULL,
-  `datadecadastro` datetime DEFAULT NULL,
+  `matricula` varchar(10) NOT NULL,
   `cpf` varchar(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `cpf` (`cpf`)
+  UNIQUE KEY `cpf` (`cpf`),
+  UNIQUE KEY `matricula` (`matricula`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -46,4 +44,4 @@ CREATE TABLE `cadastros` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-31 20:36:01
+-- Dump completed on 2022-10-31 21:38:00

@@ -20,7 +20,7 @@
             ENCLOSED BY '\"'
             LINES TERMINATED BY '\\n'
             IGNORE 1 ROWS
-            (nome,niveldeacesso,senha,genero,datadecadastro,cpf);";
+            (nome,matricula,cpf);";
             var_dump($sql_code);
             $query = mysqli_query($link,$sql_code);
             
